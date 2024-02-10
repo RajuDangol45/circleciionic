@@ -1,0 +1,7 @@
+{
+  "name": "circleciionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
