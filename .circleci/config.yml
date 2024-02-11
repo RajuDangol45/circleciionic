@@ -1,4 +1,6 @@
 version: 1.0
+orbs:
+  browser-tools: circleci/browser-tools@1.2.3
 jobs:
   build:
     working_directory: ~/repo
@@ -6,6 +8,13 @@ jobs:
       - image: cimg/node:20.10
     steps:
       - checkout
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run:
+          name: Check chrome install
+          command: |
+            google-chrome --version
+            chromedriver --version
       - run:
           name: update-npm
           command: "sudo npm install -g npm npm@10"
