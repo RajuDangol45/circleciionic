@@ -1,11 +1,11 @@
-version: 1.0
+version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.2.3
 jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: cimg/node:16.13.1-browsers
+      - image: cimg/node:20.10
     steps:
       - checkout
       - browser-tools/install-chrome
